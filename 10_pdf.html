@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANSURI ELECTRICALS WORK'S</title>
+<link rel="stylesheet" href="10_pdf.css">
+</head>
+<body>
+
+<div class="login-box" id="loginPage">
+    <img src="photo/logo.png" class="logo" alt="logo">
+    <h1>MANSURI ELECTRICALS WORK'S</h1>
+    <p class="tagline">Electrical Billing Management</p>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<div id="mainPage" class="hidden">
+
+    <div class="invoice-header">
+        <img src="photo/logo.png" class="logo" alt="logo">
+        <h1>MANSURI ELECTRICALS WORK'S</h1>
+        <p>5, BNP Rd, Adarsh Nagar, bhosale colony, Dewas, Madhya Pradesh, 455001</p>
+        <p>Mobile: 8982216593 | Email: Tosifmansuri009@gmail.com</p>
+
+        <div class="top-line">
+            <span>Invoice No.: <span id="invoiceNo"></span></span>
+            <span>Invoice Date: <span id="invoiceDate"></span></span>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <input type="text" id="party" placeholder="BILL TO / Party Name" oninput="calculateTotals()">
+        <input type="text" id="partyMobile" placeholder="Party Mobile Number">
+
+        <div id="items"></div>
+        <button onclick="addItem()">+ Add More Item</button>
+
+        <input type="number" id="received" placeholder="Received Amount" oninput="calculateTotals()">
+
+        <div class="summary">
+            <p>Total Amount ₹ <span id="totalAmount">0</span></p>
+            <p>Previous Balance ₹ <span id="previousBalance">0</span></p>
+            <p>Current Balance ₹ <span id="currentBalance">0</span></p>
+        </div>
+
+        <button onclick="saveInvoice()">Save Invoice</button>
+    </div>
+
+    <h2>Saved Bills History</h2>
+    <div id="history"></div>
+
+</div>
+
+<script src="10_pdf.js"></script>
+</body>
+</html>
